@@ -3,64 +3,228 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mashura Consulting | Microsoft D365 Consulting Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Mashura Consulting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cairo:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; background-color: #f8fafc; color: #1e293b; }
-    header { background-color: #0f172a; color: white; padding: 2rem; text-align: center; }
-    header h1 { margin: 0; font-size: 2rem; }
-    header p { color: #94a3b8; margin-top: .5rem; }
-    .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-    section { margin-bottom: 3rem; }
-    h2 { color: #0f172a; font-size: 1.5rem; border-left: 4px solid #2563eb; padding-left: .5rem; }
-    p { line-height: 1.6; }
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
-    .card { background: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .card h3 { color: #2563eb; margin-top: 0; }
-    .contact { text-align: center; background: #2563eb; color: white; padding: 2rem; border-radius: 10px; }
-    .contact a { color: white; text-decoration: underline; }
-    footer { text-align: center; padding: 1rem; font-size: 0.9rem; color: #64748b; }
+    :root {
+      --primary: #0078D4;
+      --light-gray: #f5f7fa;
+      --text: #333;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: #fff;
+      scroll-behavior: smooth;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      z-index: 10;
+    }
+    header h1 {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 20px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+    .lang-toggle {
+      cursor: pointer;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+    section {
+      padding: 100px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    #home {
+      text-align: center;
+      background: var(--light-gray);
+      border-radius: 12px;
+      margin-top: 80px;
+      padding: 120px 20px;
+    }
+    #home h2 {
+      font-size: 36px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    #home p {
+      font-size: 18px;
+      color: #555;
+    }
+    .btn {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: var(--light-gray);
+      padding: 20px;
+      border-radius: 8px;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+    button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: var(--light-gray);
+      color: #555;
+    }
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .arabic {
+      font-family: 'Cairo', sans-serif;
+      direction: rtl;
+      text-align: right;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Mashura Consulting</h1>
-    <p>Microsoft D365 Consulting & Integration Services</p>
+    <nav>
+      <a href="#home" class="en">Home</a>
+      <a href="#about" class="en">About</a>
+      <a href="#freelancers" class="en">Freelancers</a>
+      <a href="#contact" class="en">Contact</a>
+
+      <a href="#home" class="ar">الرئيسية</a>
+      <a href="#about" class="ar">عن الشركة</a>
+      <a href="#freelancers" class="ar">المستقلين</a>
+      <a href="#contact" class="ar">تواصل معنا</a>
+    </nav>
+    <button class="lang-toggle" id="langBtn">AR</button>
   </header>
 
-  <div class="container">
-    <section>
-      <h2>About Ahmed Khafagy</h2>
-      <p>Ahmed Khafagy is a Microsoft Dynamics 365 Consultant with extensive experience in Finance & Operations (F&O), ERP integrations, and business process optimization. With a strong background in implementing digital transformation solutions, Ahmed helps organizations enhance efficiency and achieve operational excellence through Dynamics 365 and Microsoft Power Platform.</p>
-    </section>
+  <section id="home">
+    <h2 class="en">Welcome to Mashura Consulting</h2>
+    <h2 class="ar">مرحبًا بكم في مشورة للاستشارات</h2>
+    <p class="en">Empowering businesses through Microsoft Dynamics 365 excellence.</p>
+    <p class="ar">نُمكّن الشركات من النجاح من خلال حلول Microsoft Dynamics 365 المتكاملة.</p>
+    <a href="#contact" class="btn en">Contact Me</a>
+    <a href="#contact" class="btn ar">تواصل معي</a>
+  </section>
 
-    <section>
-      <h2>Our Services</h2>
-      <div class="services">
-        <div class="card">
-          <h3>ERP Implementation</h3>
-          <p>End-to-end Microsoft Dynamics 365 Finance & Operations implementation tailored to your business needs, from requirement analysis to go-live.</p>
-        </div>
-        <div class="card">
-          <h3>System Integration</h3>
-          <p>Seamless integration between Dynamics 365 and third-party applications such as HRMS, payroll, and BI tools.</p>
-        </div>
-        <div class="card">
-          <h3>Support & Optimization</h3>
-          <p>Continuous system support, performance tuning, and process automation to ensure maximum ROI on your ERP investment.</p>
-        </div>
-      </div>
-    </section>
+  <section id="about">
+    <h3 class="en">About Me</h3>
+    <h3 class="ar">نبذة عني</h3>
+    <p class="en">
+      With over 23 years of experience in the field of enterprise resource planning (ERP), I am a Microsoft D365 Solution Leader at IKEA, where I lead the implementation and optimization of Microsoft Dynamics 365 for Finance and Operations (F&O). This is a powerful solution that helps businesses streamline their financial and operational processes, improve efficiency, and enhance customer satisfaction.<br><br>
+      As a Microsoft Certified Business Solution Specialist and a MCTS in Microsoft Dynamics GP, I have a deep understanding of the features and capabilities of Microsoft Dynamics 365 F&O, and I know how to leverage them to deliver results for my clients. My expertise includes everything from configuration and customization to integration and development. I have worked with organizations of all sizes, across a range of industries, to help them improve their supply chain management, automate their financial processes, and streamline their operations. I am also a great communicator and team player, who works closely with my clients and colleagues to ensure that their needs are understood and met, and that the solutions are aligned with their business goals and strategies. I believe that open communication and collaboration are key to delivering successful solutions, and I always work hard to build trust and earn the respect of my clients and colleagues.
+    </p>
+    <p class="ar">
+      بخبرة تزيد عن 23 عامًا في مجال تخطيط موارد المؤسسات (ERP)، أعمل كقائد حلول Microsoft D365 في شركة IKEA، حيث أقود تنفيذ وتحسين نظام Microsoft Dynamics 365 للتمويل والعمليات (F&O). يهدف هذا النظام القوي إلى مساعدة الشركات على تحسين عملياتها المالية والتشغيلية ورفع الكفاءة وتعزيز رضا العملاء.<br><br>
+      بصفتي مختصًا معتمدًا من Microsoft في حلول الأعمال وشهادة MCTS في Microsoft Dynamics GP، أمتلك فهمًا عميقًا لمزايا وقدرات Dynamics 365 F&O وأعرف كيف أستغلها لتحقيق نتائج ملموسة للعملاء. تشمل خبرتي الإعداد والتخصيص والتكامل والتطوير. عملت مع مؤسسات من مختلف الأحجام والقطاعات لتحسين إدارة سلاسل التوريد وأتمتة العمليات المالية وتبسيط الأداء التشغيلي. كما أتميز بالتواصل والعمل الجماعي، وأحرص على فهم احتياجات العملاء والزملاء لتحقيق حلول متوافقة مع أهدافهم واستراتيجياتهم. أؤمن بأن التواصل المفتوح والتعاون هما مفتاح النجاح.
+    </p>
+  </section>
 
-    <section class="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:ahmed.khafagy@mashura-consulting.org">ahmed.khafagy@mashura-consulting.org</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmedfatheyamin/" target="_blank">linkedin.com/in/ahmedfatheyamin</a></p>
-    </section>
-  </div>
+  <section id="freelancers">
+    <h3 class="en">Freelancer Registration</h3>
+    <h3 class="ar">تسجيل المستقلين</h3>
+    <form action="https://formspree.io/f/xqagezrl" method="POST">
+      <input type="text" name="name" placeholder="Name / الاسم" required>
+      <input type="email" name="email" placeholder="Email / البريد الإلكتروني" required>
+      <input type="text" name="specialization" placeholder="Specialization in D365 / التخصص في D365" required>
+      <button type="submit" class="en">Submit</button>
+      <button type="submit" class="ar">إرسال</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h3 class="en">Contact Me</h3>
+    <h3 class="ar">تواصل معي</h3>
+    <form action="https://formspree.io/f/xwpwvkee" method="POST">
+      <input type="text" name="name" placeholder="Name / الاسم" required>
+      <input type="email" name="email" placeholder="Email / البريد الإلكتروني" required>
+      <textarea name="message" rows="5" placeholder="Message / الرسالة" required></textarea>
+      <button type="submit" class="en">Send Message</button>
+      <button type="submit" class="ar">إرسال الرسالة</button>
+    </form>
+  </section>
 
   <footer>
-    © 2025 Mashura Consulting. All rights reserved.
+    <p>© 2025 Mashura Consulting | <a href="mailto:ahmed.khafagy@mashura-consulting.org">ahmed.khafagy@mashura-consulting.org</a> | 
+      <a href="https://www.linkedin.com/in/ahmedfatheyamin/" target="_blank">LinkedIn</a>
+    </p>
   </footer>
+
+  <script>
+    const langBtn = document.getElementById('langBtn');
+    const englishElems = document.querySelectorAll('.en');
+    const arabicElems = document.querySelectorAll('.ar');
+
+    function setLanguage(lang) {
+      if (lang === 'ar') {
+        englishElems.forEach(el => el.style.display = 'none');
+        arabicElems.forEach(el => el.style.display = 'block');
+        document.body.classList.add('arabic');
+        langBtn.textContent = 'EN';
+      } else {
+        englishElems.forEach(el => el.style.display = 'block');
+        arabicElems.forEach(el => el.style.display = 'none');
+        document.body.classList.remove('arabic');
+        langBtn.textContent = 'AR';
+      }
+    }
+
+    // Default English
+    setLanguage('en');
+    langBtn.addEventListener('click', () => {
+      if (langBtn.textContent === 'AR') {
+        setLanguage('ar');
+      } else {
+        setLanguage('en');
+      }
+    });
+  </script>
 </body>
 </html>
+
