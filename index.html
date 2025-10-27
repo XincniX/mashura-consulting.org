@@ -4,227 +4,170 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mashura Consulting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    :root {
-      --primary: #0078D4;
-      --light-gray: #f5f7fa;
-      --text: #333;
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      background: #fff;
+      font-family: 'Segoe UI', 'Open Sans', sans-serif;
+      color: #333;
+      background-color: #fff;
       scroll-behavior: smooth;
     }
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
       background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 40px;
+      border-bottom: 3px solid #0078D4;
+      text-align: center;
+      padding: 25px 0;
+      position: sticky;
+      top: 0;
       z-index: 10;
     }
     header h1 {
-      color: var(--primary);
-      font-weight: 600;
-      font-size: 20px;
+      font-size: 28px;
+      color: #0078D4;
+      font-weight: 700;
+      margin-bottom: 5px;
     }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-    }
-    nav a:hover {
-      color: var(--primary);
-    }
-    .lang-toggle {
-      cursor: pointer;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 5px;
-      font-family: inherit;
+    header p {
+      color: #666;
+      font-size: 14px;
     }
     section {
-      padding: 100px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    #home {
+      padding: 80px 10%;
       text-align: center;
-      background: var(--light-gray);
-      border-radius: 12px;
-      margin-top: 80px;
-      padding: 120px 20px;
     }
-    #home h2 {
-      font-size: 36px;
-      color: var(--primary);
-      margin-bottom: 10px;
+    .hero {
+      background: #f9f9f9;
+      border-bottom: 1px solid #eee;
     }
-    #home p {
+    .hero h2 {
+      color: #0078D4;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    .hero p {
       font-size: 18px;
       color: #555;
+      max-width: 700px;
+      margin: auto;
     }
-    .btn {
-      background: var(--primary);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
+    .about p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #444;
+    }
+    .expertise ul {
+      list-style: none;
+      max-width: 600px;
+      margin: 30px auto 0;
+      text-align: left;
+    }
+    .expertise li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
     }
     form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      background: var(--light-gray);
-      padding: 20px;
-      border-radius: 8px;
+      max-width: 500px;
+      margin: 30px auto 0;
+      text-align: left;
     }
-    input, textarea {
+    input, select, textarea, button {
+      width: 100%;
+      margin: 8px 0;
       padding: 10px;
-      font-size: 16px;
+      font-size: 15px;
       border: 1px solid #ccc;
-      border-radius: 5px;
-      font-family: inherit;
+      border-radius: 6px;
     }
     button {
-      background: var(--primary);
+      background: #0078D4;
       color: #fff;
       border: none;
-      padding: 10px;
-      border-radius: 5px;
-      font-size: 16px;
       cursor: pointer;
+      transition: 0.3s;
     }
     button:hover {
-      opacity: 0.9;
+      background: #005ea2;
     }
     footer {
+      background: #f5f5f5;
+      padding: 20px 0;
       text-align: center;
-      padding: 30px;
-      background: var(--light-gray);
-      color: #555;
+      font-size: 14px;
+      border-top: 1px solid #ddd;
     }
     footer a {
-      color: var(--primary);
+      color: #0078D4;
       text-decoration: none;
-    }
-    .arabic {
-      font-family: 'Cairo', sans-serif;
-      direction: rtl;
-      text-align: right;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Mashura Consulting</h1>
-    <nav>
-      <a href="#home" class="en">Home</a>
-      <a href="#about" class="en">About</a>
-      <a href="#freelancers" class="en">Freelancers</a>
-      <a href="#contact" class="en">Contact</a>
 
-      <a href="#home" class="ar">الرئيسية</a>
-      <a href="#about" class="ar">عن الشركة</a>
-      <a href="#freelancers" class="ar">المستقلين</a>
-      <a href="#contact" class="ar">تواصل معنا</a>
-    </nav>
-    <button class="lang-toggle" id="langBtn">AR</button>
+  <header data-aos="fade-down">
+    <h1>Mashura Consulting</h1>
+    <p>Microsoft D365 Solutions & Consulting</p>
   </header>
 
-  <section id="home">
-    <h2 class="en">Welcome to Mashura Consulting</h2>
-    <h2 class="ar">مرحبًا بكم في مشورة للاستشارات</h2>
-    <p class="en">Empowering businesses through Microsoft Dynamics 365 excellence.</p>
-    <p class="ar">نُمكّن الشركات من النجاح من خلال حلول Microsoft Dynamics 365 المتكاملة.</p>
-    <a href="#contact" class="btn en">Contact Me</a>
-    <a href="#contact" class="btn ar">تواصل معي</a>
+  <section class="hero" data-aos="fade-up">
+    <h2>Welcome to Mashura Consulting</h2>
+    <p>Delivering tailored Microsoft D365 solutions to empower organizations, optimize operations, and drive digital transformation with professionalism and integrity.</p>
   </section>
 
-  <section id="about">
-    <h3 class="en">About Me</h3>
-    <h3 class="ar">نبذة عني</h3>
-    <p class="en">
-      With over 23 years of experience in the field of enterprise resource planning (ERP), I am a Microsoft D365 Solution Leader at IKEA, where I lead the implementation and optimization of Microsoft Dynamics 365 for Finance and Operations (F&O). This is a powerful solution that helps businesses streamline their financial and operational processes, improve efficiency, and enhance customer satisfaction.<br><br>
-      As a Microsoft Certified Business Solution Specialist and a MCTS in Microsoft Dynamics GP, I have a deep understanding of the features and capabilities of Microsoft Dynamics 365 F&O, and I know how to leverage them to deliver results for my clients. My expertise includes everything from configuration and customization to integration and development. I have worked with organizations of all sizes, across a range of industries, to help them improve their supply chain management, automate their financial processes, and streamline their operations. I am also a great communicator and team player, who works closely with my clients and colleagues to ensure that their needs are understood and met, and that the solutions are aligned with their business goals and strategies. I believe that open communication and collaboration are key to delivering successful solutions, and I always work hard to build trust and earn the respect of my clients and colleagues.
-    </p>
-    <p class="ar">
-      بخبرة تزيد عن 23 عامًا في مجال تخطيط موارد المؤسسات (ERP)، أعمل كقائد حلول Microsoft D365 في شركة IKEA، حيث أقود تنفيذ وتحسين نظام Microsoft Dynamics 365 للتمويل والعمليات (F&O). يهدف هذا النظام القوي إلى مساعدة الشركات على تحسين عملياتها المالية والتشغيلية ورفع الكفاءة وتعزيز رضا العملاء.<br><br>
-      بصفتي مختصًا معتمدًا من Microsoft في حلول الأعمال وشهادة MCTS في Microsoft Dynamics GP، أمتلك فهمًا عميقًا لمزايا وقدرات Dynamics 365 F&O وأعرف كيف أستغلها لتحقيق نتائج ملموسة للعملاء. تشمل خبرتي الإعداد والتخصيص والتكامل والتطوير. عملت مع مؤسسات من مختلف الأحجام والقطاعات لتحسين إدارة سلاسل التوريد وأتمتة العمليات المالية وتبسيط الأداء التشغيلي. كما أتميز بالتواصل والعمل الجماعي، وأحرص على فهم احتياجات العملاء والزملاء لتحقيق حلول متوافقة مع أهدافهم واستراتيجياتهم. أؤمن بأن التواصل المفتوح والتعاون هما مفتاح النجاح.
-    </p>
+  <section class="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>With over 23 years of experience in the field of enterprise resource planning (ERP), I am a Microsoft D365 Solution Leader at IKEA, where I lead the implementation and optimization of Microsoft Dynamics 365 for Finance and Operations (F&O). As a Microsoft Certified Business Solution Specialist and MCTS in Microsoft Dynamics GP, I have a deep understanding of the platform and a proven ability to deliver results that align with business goals and strategies.</p>
   </section>
 
-  <section id="freelancers">
-    <h3 class="en">Freelancer Registration</h3>
-    <h3 class="ar">تسجيل المستقلين</h3>
+  <section class="expertise" data-aos="fade-up">
+    <h2>Expertise</h2>
+    <ul>
+      <li>Microsoft Dynamics 365 Finance & Operations Implementation</li>
+      <li>ERP Systems Optimization & Integration</li>
+      <li>Business Process Analysis & Automation</li>
+      <li>Consulting for Supply Chain & Financial Management</li>
+      <li>Team Leadership & Solution Architecture</li>
+    </ul>
+  </section>
+
+  <section class="freelancers" data-aos="fade-up">
+    <h2>Freelancers Registration</h2>
     <form action="https://formspree.io/f/xqagezrl" method="POST">
-      <input type="text" name="name" placeholder="Name / الاسم" required>
-      <input type="email" name="email" placeholder="Email / البريد الإلكتروني" required>
-      <input type="text" name="specialization" placeholder="Specialization in D365 / التخصص في D365" required>
-      <button type="submit" class="en">Submit</button>
-      <button type="submit" class="ar">إرسال</button>
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="specialization">Specialization in D365</label>
+      <input type="text" name="specialization" id="specialization" required>
+
+      <button type="submit">Submit</button>
     </form>
   </section>
 
-  <section id="contact">
-    <h3 class="en">Contact Me</h3>
-    <h3 class="ar">تواصل معي</h3>
-    <form action="https://formspree.io/f/xwpwvkee" method="POST">
-      <input type="text" name="name" placeholder="Name / الاسم" required>
-      <input type="email" name="email" placeholder="Email / البريد الإلكتروني" required>
-      <textarea name="message" rows="5" placeholder="Message / الرسالة" required></textarea>
-      <button type="submit" class="en">Send Message</button>
-      <button type="submit" class="ar">إرسال الرسالة</button>
-    </form>
+  <section class="contact" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>Feel free to reach out for consulting, collaboration, or partnership opportunities.</p>
+    <p>
+      <a href="mailto:ahmed.khafagy@mashura-consulting.org">ahmed.khafagy@mashura-consulting.org</a><br>
+      <a href="https://www.linkedin.com/in/ahmedfatheyamin/" target="_blank">LinkedIn Profile</a>
+    </p>
   </section>
 
   <footer>
-    <p>© 2025 Mashura Consulting | <a href="mailto:ahmed.khafagy@mashura-consulting.org">ahmed.khafagy@mashura-consulting.org</a> | 
-      <a href="https://www.linkedin.com/in/ahmedfatheyamin/" target="_blank">LinkedIn</a>
-    </p>
+    © 2025 Mashura Consulting | Designed by Ahmed Khafagy
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    const langBtn = document.getElementById('langBtn');
-    const englishElems = document.querySelectorAll('.en');
-    const arabicElems = document.querySelectorAll('.ar');
-
-    function setLanguage(lang) {
-      if (lang === 'ar') {
-        englishElems.forEach(el => el.style.display = 'none');
-        arabicElems.forEach(el => el.style.display = 'block');
-        document.body.classList.add('arabic');
-        langBtn.textContent = 'EN';
-      } else {
-        englishElems.forEach(el => el.style.display = 'block');
-        arabicElems.forEach(el => el.style.display = 'none');
-        document.body.classList.remove('arabic');
-        langBtn.textContent = 'AR';
-      }
-    }
-
-    // Default English
-    setLanguage('en');
-    langBtn.addEventListener('click', () => {
-      if (langBtn.textContent === 'AR') {
-        setLanguage('ar');
-      } else {
-        setLanguage('en');
-      }
-    });
+    AOS.init({ duration: 800, once: true });
   </script>
+
 </body>
 </html>
-
