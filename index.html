@@ -4,171 +4,181 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mashura Consulting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
     body {
-      font-family: 'Segoe UI', 'Open Sans', sans-serif;
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      background-color: #ffffff;
       color: #333;
-      background-color: #fff;
       scroll-behavior: smooth;
     }
     header {
       background: #fff;
       border-bottom: 3px solid #0078D4;
-      text-align: center;
-      padding: 25px 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center; /* لتوسيط المحتوى */
+    }
+    header .logo {
+      height: 40px;
+      margin-right: 12px;
     }
     header h1 {
-      font-size: 28px;
+      margin: 0;
       color: #0078D4;
+      font-size: 28px;
       font-weight: 700;
-      margin-bottom: 5px;
     }
     header p {
-      color: #666;
+      margin: 5px 0 0;
+      color: #555;
       font-size: 14px;
     }
     section {
-      padding: 80px 10%;
-      text-align: center;
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
     }
     .hero {
-      background: #f9f9f9;
-      border-bottom: 1px solid #eee;
+      text-align: center;
+      padding: 100px 20px;
     }
     .hero h2 {
+      font-size: 36px;
       color: #0078D4;
-      font-size: 32px;
-      margin-bottom: 15px;
     }
     .hero p {
       font-size: 18px;
-      color: #555;
-      max-width: 700px;
-      margin: auto;
-    }
-    .about p {
-      max-width: 900px;
-      margin: auto;
-      font-size: 16px;
-      line-height: 1.7;
       color: #444;
     }
-    .expertise ul {
-      list-style: none;
-      max-width: 600px;
-      margin: 30px auto 0;
-      text-align: left;
+    .expertise-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
     }
-    .expertise li {
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-    }
-    form {
-      max-width: 500px;
-      margin: 30px auto 0;
-      text-align: left;
-    }
-    input, select, textarea, button {
-      width: 100%;
-      margin: 8px 0;
-      padding: 10px;
-      font-size: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    button {
-      background: #0078D4;
-      color: #fff;
-      border: none;
-      cursor: pointer;
+    .card {
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 10px;
+      background: #fafafa;
       transition: 0.3s;
     }
+    .card:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transform: translateY(-5px);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, textarea, select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    button {
+      background-color: #0078D4;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
     button:hover {
-      background: #005ea2;
+      background-color: #005fa3;
     }
     footer {
       background: #f5f5f5;
-      padding: 20px 0;
       text-align: center;
-      font-size: 14px;
-      border-top: 1px solid #ddd;
+      padding: 20px;
+      border-top: 2px solid #0078D4;
     }
     footer a {
       color: #0078D4;
       text-decoration: none;
+      margin: 0 10px;
     }
   </style>
 </head>
 <body>
 
-  <header data-aos="fade-down">
+<header data-aos="fade-down">
+  <!-- ضع رابط الصورة كما هو موجود في الريبو -->
+  <img src="https://raw.githubusercontent.com/XincniX/mashura-consulting.org/main/79b56897-9c74-4243-939f-88e24c1df985.png" alt="Mashura Logo" class="logo" />
+  <div>
     <h1>Mashura Consulting</h1>
     <p>Microsoft D365 Solutions & Consulting</p>
-  </header>
+  </div>
+</header>
 
-  <section class="hero" data-aos="fade-up">
-    <h2>Welcome to Mashura Consulting</h2>
-    <p>Delivering tailored Microsoft D365 solutions to empower organizations, optimize operations, and drive digital transformation with professionalism and integrity.</p>
-  </section>
+<section class="hero" data-aos="fade-up">
+  <h2>Ahmed Khafagy</h2>
+  <p>Microsoft D365 Solution Leader with 23+ years of ERP experience delivering business transformation and operational excellence.</p>
+</section>
 
-  <section class="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>With over 23 years of experience in the field of enterprise resource planning (ERP), I am a Microsoft D365 Solution Leader at IKEA, where I lead the implementation and optimization of Microsoft Dynamics 365 for Finance and Operations (F&O). As a Microsoft Certified Business Solution Specialist and MCTS in Microsoft Dynamics GP, I have a deep understanding of the platform and a proven ability to deliver results that align with business goals and strategies.</p>
-  </section>
+<section id="about" data-aos="fade-up">
+  <h2>About</h2>
+  <p>With over 23 years of experience in enterprise resource planning (ERP), I am a Microsoft D365 Solution Leader at IKEA, leading the implementation and optimization of Microsoft Dynamics 365 for Finance and Operations (F&O). As a Microsoft Certified Business Solution Specialist and MCTS in Dynamics GP, I specialize in configuration, customization, integration, and development — helping organizations streamline their financial and operational processes.</p>
+</section>
 
-  <section class="expertise" data-aos="fade-up">
-    <h2>Expertise</h2>
-    <ul>
-      <li>Microsoft Dynamics 365 Finance & Operations Implementation</li>
-      <li>ERP Systems Optimization & Integration</li>
-      <li>Financial reporting and consolidation</li>
-      <li>Business Process Analysis & Automation</li>
-      <li>Consulting for Supply Chain & Financial Management</li>
-      <li>Team Leadership & Solution Architecture</li>
-    </ul>
-  </section>
+<section id="expertise" data-aos="fade-up">
+  <h2>Expertise</h2>
+  <div class="expertise-list">
+    <div class="card" data-aos="zoom-in">
+      <h3>Dynamics 365 F&O Implementation</h3>
+      <p>End-to-end setup, configuration, and deployment tailored to business needs.</p>
+    </div>
+    <div class="card" data-aos="zoom-in">
+      <h3>Integration & Automation</h3>
+      <p>Seamless integration with HRMS, CRM, and financial systems for efficient data flow.</p>
+    </div>
+    <div class="card" data-aos="zoom-in">
+      <h3>Consulting & Optimization</h3>
+      <p>Improving existing ERP setups to maximize performance and minimize cost.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="freelancers" data-aos="fade-up">
-    <h2>Join Mashura Consulting Team</h2>
-    <form action="https://formspree.io/f/xqagezrl" method="POST">
-      <label for="name">Full Name</label>
-      <input type="text" name="name" id="name" required>
+<section id="freelancers" data-aos="fade-up">
+  <h2>Freelancers Registration</h2>
+  <form action="https://formspree.io/f/xqagezrl" method="POST">
+    <input type="text" name="name" placeholder="Full Name" required />
+    <input type="email" name="email" placeholder="Email Address" required />
+    <select name="specialization" required>
+      <option value="">Select Specialization</option>
+      <option value="Finance">Finance</option>
+      <option value="Supply Chain">Supply Chain</option>
+      <option value="Development">Development</option>
+      <option value="Integration">Integration</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+</section>
 
-      <label for="email">Email Address</label>
-      <input type="email" name="email" id="email" required>
+<section id="contact" data-aos="fade-up">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:ahmed.khafagy@mashura-consulting.org">ahmed.khafagy@mashura-consulting.org</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmedfatheyamin/" target="_blank">linkedin.com/in/ahmedfatheyamin</a></p>
+</section>
 
-      <label for="specialization">Specialization in D365</label>
-      <input type="text" name="specialization" id="specialization" required>
+<footer>
+  <p>© 2025 Mashura Consulting | Designed by Ahmed Khafagy</p>
+</footer>
 
-      <button type="submit">Submit</button>
-    </form>
-  </section>
-
-  <section class="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>Feel free to reach out for consulting, collaboration, or partnership opportunities.</p>
-    <p>
-      <a href="mailto:ahmed.khafagy@mashura-consulting.org">ahmed.khafagy@mashura-consulting.org</a><br>
-      <a href="https://www.linkedin.com/in/ahmedfatheyamin/" target="_blank">LinkedIn Profile</a>
-    </p>
-  </section>
-
-  <footer>
-    © 2025 Mashura Consulting | Designed by Ahmed Khafagy
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, once: true });
-  </script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
 
 </body>
 </html>
